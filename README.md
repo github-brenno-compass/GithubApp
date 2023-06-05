@@ -1,15 +1,33 @@
 # GithubSuperApp
 
-Este é o projeto do Compass Github Super App.
+This is the Compass Github Super App project.
 
-Este projeto deve ser utilizado apenas para testes durante o desenvolvimento e para subir para produção quando uma release estiver liberada para ir para produção.
+This project should only be used for testing during development and for deployment to production when a release is ready to go to production.
 
-## Pontos de atenção
+## Initial Setup
+
+You need to create the `GlobalConstants.swift` file at the root of the project for it to compile successfully.
+
+- Note: You should contact your squad's Tech Lead to obtain the values for `clientAPIToken` and `clientSecret`.
+
+- Warning: Since this is an open-source project, **NEVER** use the actual GlobalConstants in the origin.
+
+```swift
+import GithubKit
+
+struct GlobalConstants: GithubKit.GlobalConstants {
+
+    let clientAPIToken: String = /* Github Client Token */
+    let clientSecret: String = /* Github Client Secret */
+}
+```
+
+## Points of Attention
 
 ### Milestone
 
-Utilizar milestones para manter rastreado o que está sendo enviado em cada versão.
+Use milestones to keep track of what is being shipped in each version.
 
-### Apenas leitura
+### Read-only
 
-Evitar ao máximo de alterar o Super App. Sempre que uma alteração for necessária, isso deve ser esclarecido pra a equipe com todos os detalhes técnicos da alteração.
+Avoid making changes to the Super App as much as possible. Whenever a change is necessary, it should be clarified to the team with all the technical details of the change.
